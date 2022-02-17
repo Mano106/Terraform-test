@@ -1,10 +1,10 @@
 provider "aws" {
   region = var.region
-  
 }
 
-
-data "aws_ssoadmin_instances" "example" {}
+data "aws_ssoadmin_instances" "example" {
+  value = "arn:aws:sso:::permissionSet/ssoins-7223978f8d016600/ps-11f02bfde1e4a4c8"
+}
 
 resource "aws_ssoadmin_permission_set" "example" {
   name             = "Example"
